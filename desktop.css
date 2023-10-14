@@ -4,16 +4,42 @@ body {
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @font-face {
     font-family: 'Bungee Shade';
-    src: url(Fonts/Bungee_Shade/BungeeShade-Regular.ttf);
+    src: url(Fonts/BungeeShade-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Barlow Semi Condensed';
+    src: url(fonts/BarlowSemiCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Barlow Semi Condensed Bold';
+    src: url(fonts/BarlowSemiCondensed-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: 'Bungee Outline';
+    src: url(fonts/BungeeOutline-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Barlow Condensed';
+    src: url(fonts/BarlowCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Barlow Condensed Bold';
+    src: url(fonts/BarlowCondensed-Bold.ttf);
 }
 
 main {
     margin: 50px auto;
-    height: 1000px;
+    height: 2000px;
     width: 80vw;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
@@ -31,16 +57,64 @@ nav {
     margin: 20px;
     display: flex;
     gap: 5px;
+    font-size: 23px;
+    font-family: 'Barlow Semi Condensed';
     text-align: center;
 }
 
 a {
-    font-size: 25px;
-    font-family: 'Barlow Semi Condensed';
-    padding: 10px;
+    padding: 15px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     flex-grow: 1;
     color: black;
     text-decoration: none;
+}
+
+a:nth-child(2) {
+    font-family: 'Barlow Semi Condensed Bold';
+    border: 2px solid white;
+}
+
+a:nth-child(2):hover {
+    cursor: default;
+}
+
+/*
+a:nth-child(1):hover,
+a:nth-child(3):hover,
+a:nth-child(4):hover */
+.hover_link:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+section {
+    height: auto;
+    margin: 60px 20px;
+    padding: 0 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    border: 1px solid white;
+    display: flex;
+    font-family: 'Barlow Condensed';
+}
+
+.text {
+    color: white;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: 'Bungee Outline';
+    display: inline;
+}
+
+h3 {
+    font-size: 22px;
+    font-family: 'Barlow Condensed Bold';
+}
+
+ul {
+    list-style-type: none;
 }
