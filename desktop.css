@@ -2,14 +2,14 @@ body {
     margin: 0;
     background-image: url(images/background.jpg);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 @font-face {
     font-family: 'Bungee Shade';
-    src: url(Fonts/BungeeShade-Regular.ttf);
+    src: url(fonts/BungeeShade-Regular.ttf);
 }
 
 @font-face {
@@ -89,15 +89,20 @@ a:nth-child(4):hover */
     color: white;
 }
 
-section {
+.wrapper {
     height: auto;
     margin: 60px 20px;
     padding: 0 15px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     border: 1px solid white;
-    display: flex;
     font-family: 'Barlow Condensed';
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
 }
 
 .text {
@@ -111,10 +116,120 @@ h2 {
 }
 
 h3 {
+    margin: 0;
     font-size: 22px;
     font-family: 'Barlow Condensed Bold';
 }
 
 ul {
     list-style-type: none;
+    position: relative;
+    top: -15px;
+}
+
+.text p {
+    margin-top: 40px;
+}
+
+.album {
+    width: 60vw;
+    margin: 15px 0 15px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+}
+
+.album div:first-child {
+    height: 25vw;
+    background-image: url(images/album\ himmelen.jpg);
+    background-size: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: background-image 1.5s;
+
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.album div:first-child:hover {
+    background-image: url(images/album\ himmelen\ 2.jpg);
+}
+
+ol {
+    margin: 0;
+    font-size: 12px;
+    color: rgb(80, 80, 80);
+}
+
+.album div:nth-child(2) {
+    padding: 10px 10px 10px 0;
+    background-color: rgb(255, 253, 236);
+    border-bottom-left-radius: 20px;
+
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.album div:nth-child(3) {
+    padding: 10px 10px 10px 0;
+    background-color: rgb(255, 253, 236);
+    border-bottom-right-radius: 20px;
+
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.info {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgb(255, 253, 236);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    position: relative;
+    top: -5px;
+}
+
+.info span {
+    padding: 30px 10px;
+    background-color: rgb(80, 80, 80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info span:nth-child(1) {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    grid-column: 1;
+}
+
+.info span:nth-child(2) {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    grid-column: 3 / span 2;
+}
+
+.info span:nth-child(3) {
+    background-image: url(images/Loretta\ Lynn.jpg);
+    background-size: cover;
+    background-position: top;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    grid-column: 5;
+}
+
+.info span:nth-child(4) {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    grid-column: 6;
 }
