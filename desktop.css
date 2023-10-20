@@ -38,6 +38,7 @@ body {
 }
 
 main {
+    padding: 0 20px;
     margin: 50px auto;
     height: 2000px;
     width: 80vw;
@@ -45,33 +46,39 @@ main {
     border-radius: 20px;
 }
 
-h1 {
+main > p {
     margin: 0;
-    padding-left: 20px;
-    font-size: 60px;
-    font-family: 'Bungee Shade';
     color: rgba(255, 255, 255, 0.7);
+    font-size: 7vw;
+    font-family: 'Bungee Shade';
+    font-weight: bold;
+}
+
+p, 
+ol {
+    line-height: 1.4;
 }
 
 nav {
-    margin: 20px;
-    display: flex;
-    gap: 5px;
-    font-size: 23px;
+    margin: 50px 0 60px 0;
+    font-size: 2vw;
     font-family: 'Barlow Semi Condensed';
     text-align: center;
+    display: flex;
+    gap: 5px;
 }
 
-a {
+nav a {
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 10px;
-    flex-grow: 1;
     color: black;
     text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
-a:nth-child(2) {
+nav a:nth-child(2) {
     font-family: 'Barlow Semi Condensed Bold';
     border: 2px solid white;
 }
@@ -85,17 +92,16 @@ a:nth-child(1):hover,
 a:nth-child(3):hover,
 a:nth-child(4):hover */
 .hover_link:hover {
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .wrapper {
     height: auto;
-    margin: 60px 20px;
-    padding: 0 15px;
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
     border: 1px solid white;
+    border-radius: 20px;
     font-family: 'Barlow Condensed';
     display: flex;
     flex-direction: column;
@@ -106,130 +112,138 @@ section {
 }
 
 .text {
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: 10px;
 }
 
-h2 {
-    font-size: 20px;
-    font-family: 'Bungee Outline';
-    display: inline;
-}
-
-h3 {
+.text p:first-child {
     margin: 0;
-    font-size: 22px;
+    font-size: 1.7vw;
+    font-family: 'Bungee Outline';
+    font-weight: bold; 
+}
+
+.text p:nth-child(2) {
+    margin: 0;
+    font-size: 1.6vw;
     font-family: 'Barlow Condensed Bold';
 }
 
-ul {
-    list-style-type: none;
-    position: relative;
-    top: -15px;
+.text p:nth-child(3) {
+    margin-top: 50px;
+    margin-bottom: 0;
 }
 
-.text p {
-    margin-top: 40px;
+.text ul,
+.text p,
+.info {
+    font-size: 1vw;
+}
+
+.text ul {
+    margin-top: 0;
+    margin-bottom: 50px;
+    list-style-type: none;
 }
 
 .album {
-    width: 60vw;
-    margin: 15px 0 15px 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: 15vw 15vw;
+    grid-template-rows: 15vw 15vw auto;
     gap: 10px;
 }
 
 .album div:first-child {
-    height: 25vw;
-    background-image: url(images/album\ himmelen.jpg);
-    background-size: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    transition: background-image 1.5s;
-
     grid-column: 1 / span 2;
-    grid-row: 1;
+    grid-row: 1 / span 2;
+    position: relative;
 }
 
-.album div:first-child:hover {
-    background-image: url(images/album\ himmelen\ 2.jpg);
+.album div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.album div img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1.5s;
+}
+
+.album div img:nth-child(2):hover {
+    opacity: 0;
+}
+
+.album div:nth-child(2),
+.album div:nth-child(3) {
+    padding: 15px;
+    background-color: rgb(240, 221, 187);
+    color: rgb(47, 49, 44);
+}
+
+.album div:nth-child(2) {
+    border-bottom-left-radius: 20px;
+}
+
+.album div:nth-child(3) {
+    border-bottom-right-radius: 20px;
+}
+
+h6 {
+    margin: 0;
+    font-size: 1.3vw;
 }
 
 ol {
     margin: 0;
-    font-size: 12px;
-    color: rgb(80, 80, 80);
-}
-
-.album div:nth-child(2) {
-    padding: 10px 10px 10px 0;
-    background-color: rgb(255, 253, 236);
-    border-bottom-left-radius: 20px;
-
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.album div:nth-child(3) {
-    padding: 10px 10px 10px 0;
-    background-color: rgb(255, 253, 236);
-    border-bottom-right-radius: 20px;
-
-    grid-column: 2;
-    grid-row: 2;
+    padding: 0;
+    list-style-position: inside;
+    font-size: 0.9vw;
 }
 
 .info {
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgb(255, 253, 236);
+    margin-top: 10px;
+    color: rgb(240, 221, 187);
+    
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 5px;
-    position: relative;
-    top: -5px;
 }
 
 .info span {
-    padding: 30px 10px;
-    background-color: rgb(80, 80, 80);
+    padding: 30px 15px;
+    background-color: rgb(47, 49, 44);
+    
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .info span:nth-child(1) {
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-
-    grid-column: 1;
+    border-radius: 20px 0 20px 20px;
 }
 
 .info span:nth-child(2) {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px 20px 20px 0;
 
     grid-column: 3 / span 2;
 }
 
 .info span:nth-child(3) {
+    padding-bottom: 15px;
     background-image: url(images/Loretta\ Lynn.jpg);
     background-size: cover;
     background-position: top;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-radius: 0 20px 20px 20px;
+}
 
-    grid-column: 5;
+.info span:nth-child(3) p {
+    margin: 0;
+    align-self: end;
 }
 
 .info span:nth-child(4) {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-
-    grid-column: 6;
+    border-radius: 20px 20px 0 20px;
 }
