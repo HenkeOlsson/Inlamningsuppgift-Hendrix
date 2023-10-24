@@ -5,6 +5,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
+    --heading_font_size: 56px;
+    --nav_font_size: 18px;
+    --album_name_size: 20px;
+    --released_size: 19px;
+    --paragraph_font_size: 10px;
+    --list_font_size: 9px;
 }
 
 @font-face {
@@ -38,10 +45,10 @@ body {
 }
 
 main {
-    padding: 0 20px;
+    height: auto;
+    width: 85vw;
     margin: 50px auto;
-    height: 2000px;
-    width: 80vw;
+    padding: 0 20px 10px 20px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
 }
@@ -49,7 +56,7 @@ main {
 main > p {
     margin: 0;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 7vw;
+    font-size: var(--heading_font_size);
     font-family: 'Bungee Shade';
     font-weight: bold;
 }
@@ -61,7 +68,7 @@ ol {
 
 nav {
     margin: 50px 0 60px 0;
-    font-size: 2vw;
+    font-size: var(--nav_font_size);
     font-family: 'Barlow Semi Condensed';
     text-align: center;
     display: flex;
@@ -69,7 +76,7 @@ nav {
 }
 
 nav a {
-    padding: 15px;
+    padding: 13px;
     color: black;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.6);
@@ -87,10 +94,6 @@ a:nth-child(2):hover {
     cursor: default;
 }
 
-/*
-a:nth-child(1):hover,
-a:nth-child(3):hover,
-a:nth-child(4):hover */
 .hover_link:hover {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
@@ -98,6 +101,7 @@ a:nth-child(4):hover */
 
 .wrapper {
     height: auto;
+    margin-bottom: 20px;
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid white;
@@ -118,14 +122,15 @@ section {
 
 .text p:first-child {
     margin: 0;
-    font-size: 1.7vw;
+    color: white;
+    font-size: var(--album_name_size);
     font-family: 'Bungee Outline';
     font-weight: bold; 
 }
 
 .text p:nth-child(2) {
     margin: 0;
-    font-size: 1.6vw;
+    font-size: var(--released_size);
     font-family: 'Barlow Condensed Bold';
 }
 
@@ -137,7 +142,7 @@ section {
 .text ul,
 .text p,
 .info {
-    font-size: 1vw;
+    font-size: var(--paragraph_font_size);
 }
 
 .text ul {
@@ -201,12 +206,11 @@ ol {
     margin: 0;
     padding: 0;
     list-style-position: inside;
-    font-size: 0.9vw;
+    font-size: var(--list_font_size);
 }
 
 .info {
     margin-top: 10px;
-    color: rgb(240, 221, 187);
     
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -214,7 +218,8 @@ ol {
 }
 
 .info span {
-    padding: 30px 15px;
+    padding: 20px 15px;
+    color: rgb(240, 221, 187);
     background-color: rgb(47, 49, 44);
     
     display: flex;
@@ -232,6 +237,7 @@ ol {
 }
 
 .info span:nth-child(3) {
+    text-shadow: 1px 1px 1px black;
     padding-bottom: 15px;
     background-image: url(images/Loretta\ Lynn.jpg);
     background-size: cover;
@@ -246,4 +252,63 @@ ol {
 
 .info span:nth-child(4) {
     border-radius: 20px 20px 0 20px;
+}
+
+#second_album div:nth-child(2),
+#second_album div:nth-child(3) {
+    padding: 15px;
+    background-color: rgb(111, 129, 63);
+    color: rgb(250, 225, 56);
+}
+
+#second_info span {
+    color: rgb(111, 129, 63);
+    background-color: rgb(250, 225, 56);
+}
+
+#second_info span:nth-child(1) {
+    border-radius: 20px 20px 20px 0;
+
+    grid-column: 1 / span 2;
+}
+
+#second_info span:nth-child(2) {
+    border-radius: 0 20px 20px 20px;
+
+    grid-column: 3;
+}
+
+#second_info span:nth-child(3) {
+    background-image: url(images/Timbuktu\ &\ Oskar\ Linnros.jpg);
+
+    grid-column: 4 / span 2;
+}
+
+footer {
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--paragraph_font_size);
+    font-family: 'Barlow Condensed';
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    body {
+        --heading_font_size: 6.222vw;
+        --nav_font_size: 2vw;
+        --album_name_size: 2.222vw;
+        --released_size: 2.111vw;
+        --paragraph_font_size: 1.111vw;
+        --list_font_size: 1vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        --heading_font_size: 74.664px;
+        --nav_font_size: 24px;
+        --album_name_size: 26.664px;
+        --released_size: 25.332px;
+        --paragraph_font_size: 13.332px;
+        --list_font_size: 12px;
+    }
 }
