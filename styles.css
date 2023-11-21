@@ -1,18 +1,18 @@
 body {
-    margin: 20px;
-    background-image: url(images/background_mobile.jpg);
+    margin: 0;
+    background-image: url(images/background_desktop.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     
-    --heading_font_size: 12vw;
-    --nav_font_size: 2.47vw;
-    --album_name_size: 5.5vw;
-    --released_size: 4.5vw;
-    --paragraph_font_size: 3.5vw;
-    --h6_font_size: 4.5vw;
-    --list_font_size: 3vw;
+    --heading_font_size: 56px;
+    --nav_font_size: 18px;
+    --album_name_size: 20px;
+    --released_size: 19px;
+    --paragraph_font_size: 10px;
+    --h6_font_size: 12px;
+    --list_font_size: 9px;
 }
 
 @font-face {
@@ -45,13 +45,21 @@ body {
     src: url(fonts/BarlowCondensed-Bold.ttf);
 }
 
+main {
+    height: auto;
+    width: 85vw;
+    margin: 50px auto;
+    padding: 0 20px 10px 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
 main > p {
     margin: 0;
     color: rgba(255, 255, 255, 0.7);
     font-size: var(--heading_font_size);
     font-family: 'Bungee Shade';
     font-weight: bold;
-    text-align: center;
 }
 
 p, 
@@ -65,6 +73,7 @@ nav {
     font-family: 'Barlow Semi Condensed';
     text-align: center;
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 
@@ -105,19 +114,16 @@ a:nth-child(2):hover {
 }
 
 section {
-    display: grid;
-    flex-direction: column;
+    display: flex;
 }
 
 .text {
     color: rgba(255, 255, 255, 0.8);
     margin-right: 10px;
-
-    order: 2;
 }
 
 .text p:first-child {
-    margin: 10px 0 0 0;
+    margin: 0;
     color: white;
     font-size: var(--album_name_size);
     font-family: 'Bungee Outline';
@@ -131,26 +137,26 @@ section {
 }
 
 .text p:nth-child(3) {
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 0;
 }
 
 .text ul,
-.text p {
+.text p,
+.info {
     font-size: var(--paragraph_font_size);
 }
 
 .text ul {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     list-style-type: none;
 }
 
 .album {
-    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-columns: 15vw 15vw;
+    grid-template-rows: 15vw 15vw auto;
     gap: 10px;
 }
 
@@ -163,14 +169,19 @@ section {
 .album div img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px 20px 0 0;
 }
 
 .album div img:nth-child(2) {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.album div img:nth-child(2):hover {
+    opacity: 1;
 }
 
 .album div:nth-child(2),
@@ -201,10 +212,9 @@ ol {
 }
 
 .info {
-    font-size: 2.5vw;
+    margin-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(6, 1fr);
     gap: 5px;
 }
 
@@ -212,7 +222,6 @@ ol {
     padding: 20px 15px;
     color: rgb(240, 221, 187);
     background-color: rgb(47, 49, 44);
-    
     display: flex;
     align-items: center;
 }
@@ -223,8 +232,7 @@ ol {
 
 .info span:nth-child(2) {
     border-radius: 20px 20px 20px 0;
-
-    grid-column: span 2;
+    grid-column: 3 / span 2;
 }
 
 .info span:nth-child(3) {
@@ -234,9 +242,6 @@ ol {
     background-size: cover;
     background-position: top;
     border-radius: 0 20px 20px 20px;
-
-    grid-column: 2;
-    grid-row: 2;
 }
 
 .info span:nth-child(3) p {
@@ -246,10 +251,6 @@ ol {
 
 .info span:nth-child(4) {
     border-radius: 20px 20px 0 20px;
-
-
-    grid-column: 3;
-    grid-row: 2;
 }
 
 #second_album div:nth-child(2),
@@ -279,8 +280,7 @@ ol {
 #second_info span:nth-child(3) {
     background-image: url(images/Timbuktu_OskarLinnros.jpg);
 
-    grid-column: 1 / span 2;
-    grid-row: 2;
+    grid-column: 4 / span 2;
 }
 
 footer {
@@ -288,4 +288,122 @@ footer {
     color: rgba(255, 255, 255, 0.8);
     font-size: var(--paragraph_font_size);
     font-family: 'Barlow Condensed';
+}
+
+@media (min-width: 501px) and (max-width: 680px) {
+    body {
+        --nav_font_size: 2.647vw;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    body {
+        --heading_font_size: 6.222vw;
+        --nav_font_size: 2vw;
+        --album_name_size: 2.222vw;
+        --released_size: 2.111vw;
+        --paragraph_font_size: 1.111vw;
+        --h6_font_size: 1.333vw;
+        --list_font_size: 1vw;
+    }
+}
+
+@media (min-width: 1201px) {
+    body {
+        --heading_font_size: 74.664px;
+        --nav_font_size: 24px;
+        --album_name_size: 26.664px;
+        --released_size: 25.332px;
+        --paragraph_font_size: 13.332px;
+        --h6_font_size: 15.996px;
+        --list_font_size: 12px;
+    }
+}
+
+
+/*Media query for mobile version*/
+
+@media (max-width: 500px) {
+    body {
+        padding-bottom: 10px;
+        background-image: url(images/background_mobile.jpg);
+
+        --heading_font_size: 12vw;
+        --nav_font_size: 2.47vw;
+        --album_name_size: 5.5vw;
+        --released_size: 4.5vw;
+        --paragraph_font_size: 3.5vw;
+        --h6_font_size: 4.5vw;
+        --list_font_size: 3vw;
+    }
+
+    main {
+        width: auto;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    main > p {
+        text-align: center;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    .text {
+        order: 2;
+    }
+
+    .text p:first-child {
+        margin-top: 10px;
+    }
+
+    .text p:nth-child(3) {
+        margin-top: 40px;
+    }
+
+    .text ul {
+        margin-bottom: 40px;
+    }
+
+    .album {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr auto;
+    }
+
+    .album div img {
+        height: auto;
+        border-radius: 20px 0 0 20px;
+    }
+    
+    .album div img:nth-child(2) {
+        pointer-events: none;
+    }
+
+    .info {
+        font-size: 2.5vw;
+        margin-top: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .info span:nth-child(2) {
+        grid-column: 2 / span 2;
+    }
+
+    .info span:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .info span:nth-child(4) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    #second_info span:nth-child(3) {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
 }
